@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../services/product.service';
 
-import { FormsModule } from '@angular/forms';import { Product } from '../../models/product.model';
-import { CommonModule } from '@angular/common';
+import { Product } from '../../models/product.model'; // Import the Product model
+
 
 @Component({
   selector: 'app-product',
