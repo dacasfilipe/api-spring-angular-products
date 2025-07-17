@@ -8,7 +8,7 @@ import com.fullstackangular.api.repository.ProductRepository;
 import java.util.List;
 
 @Service
-@RequiredArgsConstructor
+
 public class ProductService {
     private final ProductRepository productRepository;
 
@@ -38,4 +38,7 @@ public class ProductService {
         productRepository.deleteById(id);
     }
 
+    public ProductService(ProductRepository productRepository) {
+        this.productRepository = productRepository;
+    }
 }

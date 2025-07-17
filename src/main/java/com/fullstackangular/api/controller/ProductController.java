@@ -7,12 +7,16 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@CrossOrigin(origins = "http://localhost:63342") // Adjust the origin as needed
 @RestController
 @RequestMapping("/api/products")
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 public class ProductController {
     private final ProductService productService;
+
+    public ProductController(ProductService productService) {
+        this.productService = productService;
+    }
 
     // Define endpoints for CRUD operations here
     @GetMapping

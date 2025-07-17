@@ -18,17 +18,14 @@ export class ProductComponent implements OnInit {
   ngOnInit(): void {
     this.loadProducts();
   }
-
   loadProducts(): void {
     this.productService.getAllProducts().subscribe((data) => {
       this.products = data;
     });
   }
-
   selectProduct(product: Product): void {
     this.selectedProduct = { ...product };
   }
-
   saveProduct(): void {
     if (this.selectedProduct.id) {
       this.productService
@@ -40,7 +37,6 @@ export class ProductComponent implements OnInit {
         .subscribe(() => this.loadProducts());
     }
   }
-
   deleteProduct(id: number): void {
     this.productService.deleteProduct(id).subscribe(() => this.loadProducts());
   }
